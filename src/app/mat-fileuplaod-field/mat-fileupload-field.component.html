@@ -1,0 +1,31 @@
+<div>
+  <input *ngIf="singleFileMode" type="file" #fileInputElement style="display: none" (change)="onFilesAdded()"/>
+  <input *ngIf="!singleFileMode" type="file" #fileInputElement style="display: none" (change)="onFilesAdded()" multiple/>
+  <!--<input type="file" #fileInputElement style="display: none" (change)="onFilesAdded()" />-->
+
+  <button type="button"
+          mat-raised-button
+          color="primary"
+          (click)="addFiles()"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+          [style.background]="buttonBackground">
+    {{buttonLabel}}
+    <mat-icon>attach_file</mat-icon>
+  </button>
+</div>
+
+<mat-card *ngIf="files.size > 0" [style.background]="fileAreaBackground">
+  <mat-form-field class="wide-form-field">
+    <mat-label>{{singleFileMode?('idp.file'|translate):('idp.files'|translate)}}:</mat-label>
+    <mat-chip-list #chipList>
+      <mat-chip *ngFor="let file of files" [selectable]="false"
+                [removable]="true" (removed)="removeFile(file)">
+        {{(file.name.length>20)? (file.name | slice:0:20)+'..':(file.name) }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </mat-form-field>
+</mat-card>
+

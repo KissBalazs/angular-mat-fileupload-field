@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mat-fileupload-chip": {
+    "mat-fileupload-field": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mat-fileupload-chip",
+            "outputPath": "dist/mat-fileupload-field",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mat-fileupload-chip:build"
+            "browserTarget": "mat-fileupload-field:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mat-fileupload-chip:build:production"
+              "browserTarget": "mat-fileupload-field:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mat-fileupload-chip:build"
+            "browserTarget": "mat-fileupload-field:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "mat-fileupload-chip-e2e": {
+    "mat-fileupload-field-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mat-fileupload-chip:serve"
+            "devServerTarget": "mat-fileupload-field:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mat-fileupload-chip:serve:production"
+              "devServerTarget": "mat-fileupload-field:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "mat-fileupload-chip"
+  "defaultProject": "mat-fileupload-field"
 }
