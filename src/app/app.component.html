@@ -1,0 +1,14 @@
+<div style="text-align:center">
+  <h1>Angular Material File Input field with FormControl</h1>
+</div>
+<p>Click Submit and watch the console</p>
+
+<mat-card>
+  <form [formGroup]="myForm">
+    <mat-form-field>
+      <app-file-upload-area formControlName="files"></app-file-upload-area>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+  </form>
+</mat-card>
